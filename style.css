@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#canvas{
+    background-color: transparent;
+}
+
+#weatherContainer{
+    color: white;
+    font-family: 'Righteous', cursive;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 13;
+}
+
+
+.score{
+    color: white;
+    font-family: 'Righteous', cursive;
+    position: absolute;
+    top: 10%;
+    left: 130px;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 13;
+}
+
+
+#aboutWeather{
+    color: white;
+    font-family: 'Righteous', cursive;
+    margin-top: 50px;
+    margin: auto;
+    text-align: center;
+}
+
+
+.attempt{
+    color: white;
+    font-family: 'Righteous', cursive;
+    position: absolute;
+    top: 10%;
+    right:-96px;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 13;
+}
+
+#game_score{
+    font-size: 60px;
+    margin: 20px;
+}
+
+
+
+.countDown{
+    color: white;
+    font-family: 'Righteous', cursive;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 13;
+}
+
+
+
+.gameOver{
+    font-family: 'Righteous', cursive;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 13;
+}
+
+
+.gameOver h1{
+    animation: animCount 8s linear ease-in;
+}
+
+.countDown h1{
+    animation: animCount 8s linear ease-in;
+    font-size: 90px;
+}
+
+@keyframes animCount {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(2.2);
+    }
+}
+
+.backgroundimage {
+    display: flex;
+    position: relative;
+    background: url("images/loadingcover.jpg") center/cover no-repeat;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.backgroundimage2 {
+    display: flex;
+    position: relative;
+    background: url("images/bg.jpg") center/cover no-repeat;
+    background-color: black;
+    opacity: 0.99;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.backgroundimage3 {
+    background: url("images/bg.jpg") center/cover no-repeat;
+    background-color: black;
+    opacity: 0.99;
+    height: 100vh;
+}
+
+.backgroundimage5 {
+    background: url("images/bg.jpg") center/cover no-repeat;
+    background-color: black;
+    opacity: 0.99;
+    height: 100vh;
+}
+
+.backgroundimage4 {
+    background: url("images/wp7567378.jpg") center/cover no-repeat;
+    background-color: black;
+    opacity: 0.96;
+    height: 100vh;
+}
+
+.buttoncontainer {
+    position: absolute;
+    bottom: 40px;
+    padding: 10px;
+
+}
+
+.menuround {
+    width: 300px;
+    height: 300px;
+    line-height: 300px;
+    border-radius: 50%;
+    font-size: 10px;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+    transform: rotate(360deg);
+    transition-duration: 3s;
+    border: 40px solid #EBB02D;
+    border-top: 40px solid #EBB02D;
+    border-left: 40px solid #EBB02D;
+    border-right: 40px solid #EBB02D;
+}
+
+
+.menuround3 {
+    width: 140px;
+    height: 140px;
+    line-height: 140px;
+    border-radius: 50%;
+    font-size: 10px;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+    transform: rotate(360deg);
+    transition-duration: 3s;
+    border: 20px solid orangered;
+    border: 20px solid orangered;
+    border-left: 20px solid orangered;
+    border-right: 20px solid orangered;
+}
+
+@keyframes loading {
+    0% {
+        transform: translate(-50%, -50%) rotate(25deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(385deg);
+    }
+}
+
+
+.animationcss {
+    transform: translate(-50%, -50%) rotate(25deg);
+    /* Add animation if you want to turn it into a loading indicator */
+    animation: loading 8s ease-in-out infinite;
+}
+
+
+.menuround2 {
+    width: 250px;
+    height: 250px;
+    line-height: 250px;
+    border-radius: 50%;
+    font-size: 10px;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(360deg);
+    transition-duration: 3s;
+    border: 40px solid #0081C9;
+    border-top: 40px solid #0081C9;
+    border-left: 40px solid #0081C9;
+    border-right: 40px solid #0081C9;
+    /* Add animation if you want to turn it into a loading indicator */
+    transform: translate(-50%, -50%) rotate(25deg);
+}
+
+.oldPaperStyle {
+    background-color: #E8DCB8;
+    width: 550px;
+    border-radius: 10%;
+    border: 10px solid #B99566;
+}
+
+.oldPaperStyle2 {
+    background-color: #E8DCB8;
+    width: 250px;
+    border: 10px solid #B99566;
+}
+
+.oldPaperStyle>p {
+    font-family: 'Righteous', cursive;
+    font-size: 10px;
+    padding: 14px;
+}
+
+table,
+th,
+td {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 20px;
+    top: 50%;
+}
+
+.tab {
+    /* Center vertically and horizontally */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+    /* Apply negative top and left margins to truly center the element */
+}
+
+
+.loadingstyle {
+    display: none;
+}
+
+
+.divElement {
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 1000px;
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Ninja Game</title>
+    <link rel="icon" href="images/gamepad.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+    <!-- Makes Audio -->
+
+    <!-- <audio controls autoplay>
+        <source src="soundeffects/Fruit Ninja.mp3" type="audio/mpeg">
+    </audio> -->
+
+
+
+
+    <!-- Loading Menu -->
+
+
+    <div id="LoadingContainer" class="backgroundimage">
+        <div class="buttoncontainer">
+            <button id="startgameid"
+                style="font-size: 40px;border-radius: 10px;padding: 0 20px;background-color: orange;font-family: 'Righteous', cursive;"
+                onclick="StartGameButton()"  type="button" class="btn">START GAME</button>
+            <audio id="audio" loop="true" src="soundeffects/Fruit Ninja.mp3"></audio>
+            <div id="loadingid" class="align-items-center loadingstyle">
+                <strong style="font-size: 40px;color: white;margin-left: 20px;">Loading...</strong>
+                <div style="font-size: 30px;color: white;" class="spinner-border ms-auto" role="status"
+                    aria-hidden="true"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Menu -->
+
+    <div id="MenuContainer" class="backgroundimage2">
+        <img style="margin-bottom: 400px;width: 500px;height: 390px;" src="images/logo.png" alt="">
+
+
+
+
+        <div style="margin-left: 100px;margin-top: 50px;" id="ModeChoices" class="ModeBackground">
+
+            <!-- Classic Mode Side -->
+
+            <div onclick="ClassicFunc()" style="margin-left: 70px;margin-top: 200px;background-color: transparent;"
+                class="menuround">
+                <img class="animationcss" style="margin: 110px;" src="images/lemon-slice (2).png" alt="">
+                <audio id="cuttingaudio" src="soundeffects/fruitcuttingsound.mp3"></audio>
+            </div>
+
+            <!-- Settings Side -->
+
+            <div onclick="SettingFunc()" style="margin-left: 150px;margin-top: -40px;background-color: transparent;"
+                class="menuround2">
+                <audio id="cuttingaudio" src="soundeffects/fruitcuttingsound.mp3"></audio>
+                <img style="width: 100px;height: 100px;margin: 85px;" class="animationcss" src="images/setting (2).png"
+                    alt="">
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+    <!-- Classic Mode -->
+
+
+    <div id="classicContainer" class="backgroundimage3">
+
+
+
+        <div class="gameOver" id="gameOverContainer">
+            <audio id="gameOverAudio" src="soundeffects/videogame-death-sound-43894.mp3"></audio>
+
+        </div>
+        <audio id="backgroundaudioeffect" src="soundeffects/nature-soundstropicaljunglebirds-108380.mp3"></audio>
+        <audio id="cuttingfruitaudio" src="soundeffects/slashkut-108175.mp3"></audio>
+        <audio id="bombaudio" src="soundeffects/hq-explosion-6288.mp3"></audio>
+
+
+        <canvas style="background-color: transparent;" id="canvas"></canvas>
+
+        <div class="score" id="scoreSection">
+            <br>
+            <div class="currentScore" style="display: block;">
+                <img style="width: 70px;height: 70px;display: inline-block;margin-bottom: 35px;"
+                    src="images/vegetables (1).png " alt="">
+                <b style="color: white;" id="game_score">0</b>
+            </div>
+        </div>
+
+
+        <audio id="wrongattempt" src="soundeffects/buzzer-or-wrong-answer-20582.mp3"></audio>
+
+        <div id="weatherContainer">
+            <h1 style="color: white;" id="aboutWeather"></h1>
+        </div>
+
+
+        <div class="attempt" id="attemptSection">
+            <div style="display:block;margin: auto;text-align: center;">
+                <img id="first_attempt" style="width: 60px;height: 60px;margin-left: 20px;display: inline-block;" src="images/X_green.png"
+                    alt="">
+                <img id="second_attempt" style="width: 60px;height: 60px;margin-left: 20px;display: inline-block;" src="images/X_green.png"
+                    alt="">
+                <img id="third_attempt" style="width: 60px;height: 60px;margin-left: 20px;display: inline-block;" src="images/X_green.png"
+                    alt="">
+            </div>
+        </div>
+
+
+        <div class="countDown" id="countDownContainer">
+            <audio id="countDownAudio" src="soundeffects/race-start-beeps-125125.mp3"></audio>
+            <h1 style=" font-family: 'Righteous', cursive;font-size: 70px;"></h1>
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+    <!-- Settings -->
+
+
+    <div id="settingContainer" class="backgroundimage5 ">
+
+
+
+        <!-- About Game -->
+
+        <div class="divElement">
+            <div style="display: inline-block;padding: 15px;" class="oldPaperStyle" id="settingTitleContainer">
+                <p class="about" style="padding: 13px;">
+                <h2 style=" font-family: 'Righteous', cursive;text-align: center;color: black;">ABOUT</h2>
+                <br><b style="color: orangered;">
+
+                    Fruit Ninja</b> is a video game developed by Halfbrick originally released <b
+                    style="color: green;">on
+                    April 21, 2010</b>. In
+                the game, the player must slice fruit that is thrown into the air by swiping the device's
+                touch screen with their finger(s) or (in the case of the Xbox 360 version) the player's arms
+                and hands, and must not slice bombs. It features multiple gameplay modes, leaderboards and
+                multiplayer.
+
+                The game was initially released for iPod Touch and iPhone devices before being expanded to
+                other devices and platforms: <b style="color: green;">July 12, 2010</b> for the iPad, <b
+                    style="color: green;">September 17, 2010</b> for Android
+                devices, <b style="color: green;">December 22, 2010</b> for Windows Phone, and <b
+                    style="color: green;">March 2011</b> for Samsung's Bada and Nokia's
+                Symbian. Just prior to E3 2011 Fruit Ninja Kinect, which utilizes the Kinect peripheral, was
+                released for the Xbox 360 on <b style="color: green;">August 2012</b>. Fruit Ninja was also released for
+                Windows 8,
+                on <b style="color: green;">June 7 2012</b>. Versions with alternative names exist, such as Fruit Ninja
+                HD on the iPad,
+                Fruit Ninja THD for Nvidia Tegra 2–based Android devices, Fruit Ninja VR for HTC Vive and
+                PlayStation 4, and an arcade version called Fruit Ninja FX.
+                <br>
+
+                </p>
+            </div>
+
+
+
+            <!-- Audio Settings -->
+
+            <div style="display: inline-block;">
+                <div style="display: block;margin-left: 100px;margin-top: 100px;" class="oldPaperStyle2"
+                    id="settingTitleContainer">
+                    <div style="display: block;">
+                        <br>
+                        <h2 style=" font-family: 'Righteous', cursive;text-align: center;color: black;">AUDIO</h2>
+                    </div>
+                    <div style="display: block;">
+                        <img id="soundimage" onclick="SoundOffFunc()"
+                            style="padding: 18px;text-align: center;margin: auto;margin-left: 60px;"
+                            src="images/headphone.png" alt="">
+                        <img id="soundimage2" onclick="SoundOnFunc()"
+                            style="padding: 18px;text-align: center;margin: auto;margin-left: 60px;display: none;"
+                            src="images/no-music.png" alt="">
+                    </div>
+                </div>
+
+
+
+                <!-- Back Button -->
+
+
+                <div style="display: block;">
+                    <div onclick="BackFunc()"
+                        style="margin-left: 150px;margin-top: 100px;background-color: transparent;" class="menuround3">
+                        <img style="margin-bottom:40px;" src="images/backicon.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
